@@ -1,7 +1,6 @@
 :root{
     --blue: #0A1D83;
-    --red: #F50128;
-    --green: #B7F501;
+    --green: #427A38;
     --grey: #ebe1e17c;
 }
 
@@ -34,7 +33,7 @@ html{
 
 .home-main section{
     margin-top: 40px;
-    margin-left: 40px;
+    margin-left: 50px;
     display: flex;
     flex-direction: column;
 }
@@ -62,7 +61,7 @@ html{
     width: 50px;
     height: 50px;
     margin-left: 15px;
-    background-image: url("../assets/go-back-red.png");
+    background-image: url("../assets/go-back-green.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -90,7 +89,7 @@ form{
 }
 
 form h2{
-    color: var(--red);
+    color: var(--green);
     font-size: 2.2rem;
     font-weight: bold;
     margin-bottom: 20px;
@@ -118,28 +117,39 @@ form li label{
 }
 
 form input{
-    width: 230px;
-    height: 25px;
+    width: 220px;
+    height: 30px;
     background-color: white;
+    color: black;
+    font-size: 1.5rem;
 }
 
 form button{
     background-color: var(--blue);
-    width: 320px;
+    width: 150px;
     height: 35px;
     color: white;
     border: none;
+    margin-right: 10px;
 }
 
 form button:hover{
-    background-color: var(--red);
-    box-shadow: 2px 4px 10px 4px var(--grey);
+    background-color: var(--green);
+    box-shadow: 2px 2px 4px 4px var(--grey);
 }
 
 form p{
     align-self: flex-start;
     font-size: 1.2rem;
     color: white;
+    margin-left: 25px;
+}
+
+form .message{
+    font-size: 1.5rem;
+    margin-top: 20px;
+    color: var(--green);
+    align-self: center;
 }
 
 footer{
@@ -156,5 +166,5 @@ footer a{
     font-weight: 700;
     text-decoration: none;
     font-size: 1.8rem;
-    color: var(--red);
+    color: var(--green);
 }

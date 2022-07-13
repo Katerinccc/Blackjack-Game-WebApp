@@ -8,9 +8,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./style/style.css">
+    <script type="module" src="./src/index.js"></script>
     <title>Player</title>
 </head>
-<body>
+<body onload="createPlayer()">
     <header class="header-go-back">
         <figure>
             <a href="./index.htm"><span></span></a>
@@ -18,22 +19,24 @@
         </figure>
     </header>
     <main>
-        <form method="POST" action="" autocomplete="off">
+        <form id="playerForm" method="POST" action="" autocomplete="off">
             <h2>Enter player information:</h2>
             <ul>
                 <li>
-                    <label for="gamer1">DNI  *: </label>
-                    <input type="text" id="gamer1" name="gamer1" required>
+                    <label for="idPlayer">DNI  *: </label>
+                    <input type="text" id="idPlayer" name="idPlayer" required>
                 </li>
                 <li>
-                    <label for="gamer2">Name *: </label>
-                    <input type="text" id="gamer2" name="gamer2" required>
+                    <label for="name">Name *: </label>
+                    <input type="text" id="name" name="name" required>
                 </li>
                 <li>
                     <button type="submit" id="submit">CREATE PLAYER</button>
+                    <button type="reset" id="reset">RESET</button>
                 </li>
             </ul>
             <p><i>*field is required</i></p>
+            <p id="message"></p>
         </form>
     </main>
 </body>
