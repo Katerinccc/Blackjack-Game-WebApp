@@ -11,6 +11,35 @@
     <title>Game</title>
 </head>
 <body>
-    
+    <header class="header-go-back">
+        <figure>
+            <a href="./index.htm"><span></span></a>
+            <figcaption>Home page</figcaption>
+        </figure>
+    </header>
+    <main class="main-form">
+        <form method="POST" action="" class="game-form">
+            <h2>Enter Player DNI to play:</h2>
+            <ul>
+                <li>
+                    <label for="gamerId">ID:</label>
+                    <input type="text" id="gameId" name="gameId" required>
+                </li>
+                <li>
+                    <button type="submit" id="submit">PLAY</button>
+                </li>
+            </ul>
+            <ul class="play-game">
+                <h3>BLACKJACK</h3>
+                <li>
+                    <p>You got the card: </p>
+                    <p>Your score now is:</p>
+                </li>
+                <button>Draw card</button>
+                <button>New Game</button>
+                <p>You win Congratulations!!!</p>
+            </ul>
+        </form>
+    </main>
 </body>
 </html>
