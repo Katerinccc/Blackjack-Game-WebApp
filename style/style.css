@@ -9,7 +9,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Abril Fatface', cursive;
-    background-color: black;
+    /* background-color: black; */
 }
 
 html{
@@ -48,6 +48,33 @@ html{
     border-radius: 5px;
     color: white;
     text-align: center;
+}
+
+
+.header-go-back{
+    margin: 20px 0px 0px 100px;
+    display: flex;
+}
+
+.header-go-back span{
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    margin-left: 15px;
+    background-image: url("../assets/go-back-red.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.header-go-back span:hover{
+    background-image: url("../assets/go-back-blue.png");
+}
+
+.header-go-back figcaption{
+    font-size: 1.5rem;
+    padding-left: 5px;
+    color: var(--grey);
 }
 
 footer{
