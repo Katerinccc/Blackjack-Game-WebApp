@@ -1,15 +1,16 @@
 :root{
     --blue: #0A1D83;
     --red: #F50128;
-    --green: #B7F501
+    --green: #B7F501;
+    --grey: #ebe1e17c;
 }
 
   *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Abril Fatface', cursive;
-    /* background-color: black; */
+    font-family: 'Lora', serif;
+    background-color: rgb(26, 25, 25);
 }
 
 html{
@@ -32,7 +33,7 @@ html{
 
 .home-main section{
     margin-top: 40px;
-    margin-left: 20px;
+    margin-left: 40px;
     display: flex;
     flex-direction: column;
 }
@@ -49,7 +50,6 @@ html{
     color: white;
     text-align: center;
 }
-
 
 .header-go-back{
     margin: 20px 0px 0px 100px;
@@ -72,9 +72,73 @@ html{
 }
 
 .header-go-back figcaption{
+    color: white;
     font-size: 1.5rem;
     padding-left: 5px;
-    color: var(--grey);
+}
+
+form{
+    margin: 10px auto;
+    border: 1.5px solid var(--grey);
+    border-radius: 20px;
+    padding: 20px;
+    width: 450px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+form h2{
+    color: var(--red);
+    font-size: 2.2rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+form ul{
+    list-style: none;
+    font-size: 1.5rem;
+}
+
+form li{
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+form li:last-of-type{
+    justify-content: center;
+}
+
+form li label{
+    margin-right: 20px;
+    color: white;
+}
+
+form input{
+    width: 230px;
+    height: 25px;
+    background-color: white;
+}
+
+form button{
+    background-color: var(--blue);
+    width: 320px;
+    height: 35px;
+    color: white;
+    border: none;
+}
+
+form button:hover{
+    background-color: var(--red);
+    box-shadow: 2px 4px 10px 4px var(--grey);
+}
+
+form p{
+    align-self: flex-start;
+    font-size: 1.2rem;
+    color: white;
 }
 
 footer{
