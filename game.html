@@ -35,11 +35,11 @@
         <section class="hide-element" id="play-game">
             <h3>BLACKJACK</h3>
             <h4 id="namePlayer"></h4>
-            <p>You got the card: </p>
-            <p>Your score now is:</p>
-            <button>Draw card</button>
-            <button>New Game</button>
-            <p>You win Congratulations!!!</p>
+            <p id="cardGame"></p>
+            <p id="scoreGame"></p>
+            <button type="submit" id="draw" onclick="playGame()">Draw card</button>
+            <button type="submit" id="newGame" onclick="startGame()">New Game</button>
+            <h4 id="messageResult"></h4>
         </section>
         <section class="hide-element" id="not-found">
             <p>The ID entered is not registered.</p>
