@@ -11,7 +11,7 @@ The player can win the game if they get a score equal to 21. The game cards are 
 
 ##### Run the game locally:
 
-1. Download the [repository from GitHub.](https://github.com/Katerinccc/Blackjack-game-JS) 
+1. Download the [repository from GitHub.](https://github.com/Katerinccc/Blackjack-Game-WebApp) 
 2. Open the extracted file on [Visual Studio Code](https://code.visualstudio.com/)
 3. Use the live server extension to run the game. If you do not have it, can download it [here](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer).
 4. After installing the extension go to the file **index.html** and press your opposite click, find the option ***Open with Live Server***, and a new page will be open on your default browser.

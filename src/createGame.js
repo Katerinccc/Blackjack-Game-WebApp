@@ -97,7 +97,7 @@ function validateGameStatus(gameStatus, player){
         case "win":
             player.prize += prizeGame;
             buttonDraw.setAttribute('disabled', '');
-            displayMessage.innerHTML = "&#x1f3c6 You win congratulations!!!" + "  &#x1f4b0 Your Prize is: " + player.prize;
+            displayMessage.innerHTML = "&#x1f3c6 You win, Congratulations!!!" + "  &#x1f4b0 Your Prize is: " + player.prize;
             break;
         case "continue":
             buttonDraw.removeAttribute('disabled');
