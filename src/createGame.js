@@ -1,7 +1,11 @@
 import { CardDeck } from "./deck.js";
 
 const mainGame = () =>{
-    startGame();
+    let playButton = document.getElementById("play");
+    playButton.addEventListener("click", startGame);
+
+    let newGameButton = document.getElementById("newGame");
+    newGameButton.addEventListener("click", startGame);
 }
 
 window.mainGame = mainGame;
@@ -10,32 +14,34 @@ let cardDeck = new CardDeck();
 cardDeck.createCardDeck();
 let players = localStorage.getItem('playersGame');
 players = JSON.parse(players);
+let prizeGame = 1000;
 let gameCards = [];
 let score;
+let displayMessage = document.getElementById("messageResult");
 
 
 function startGame(){
-    gameForm.onsubmit = function (event){
-        event.preventDefault();
 
-        let idPlayer = document.getElementById("idPlayer").value; 
+    localStorage.removeItem('activePlayer');
+    displayMessage.innerHTML = "";
 
-        if (validatePlayer(idPlayer)) {
-            display("play-game","not-found","hide-element");
+    let idPlayer = document.getElementById("idPlayer").value; 
 
-            let player = searchPlayer(idPlayer);
+    if (validatePlayer(idPlayer)) {
+        display("play-game","not-found","hide-element");
 
-            let namePlayer = document.getElementById("namePlayer");
-            namePlayer.innerHTML = "Hi " + player.name + "! Let's play..."
+        let player = searchPlayer(idPlayer);
 
-            player.prize = 0;
-            
-            createGame(player);
-        }else{
-            document.getElementById("reset").click();
-            display("not-found","play-game","hide-element");
-        }
+        let namePlayer = document.getElementById("namePlayer");
+        namePlayer.innerHTML = "Hi " + player.name + "! Let's play..."
 
+        player.prize = 0;
+        
+        localStorage.setItem('activePlayer', JSON.stringify(player));
+        createGame();
+    }else{
+        document.getElementById("reset").click();
+        display("not-found","play-game","hide-element");
     }
 }
 
@@ -51,14 +57,16 @@ function display(elementDisplayId, elementHiddenId, elementHiddenClass) {
     elementHidden.classList.add(elementHiddenClass);
 }
 
-function createGame(player) {
+function createGame() {
     gameCards = [];
     score = 0;
-
-    playGame(player);
+    playGame();
 }
 
-function playGame(player) {
+function playGame() {
+    let player = localStorage.getItem('activePlayer');
+    player = JSON.parse(player);
+
     let cardGame = drawCardGame();
 
     let displayCard = document.getElementById("cardGame");
@@ -70,33 +78,33 @@ function playGame(player) {
     }
 
     score += cardGame.value;
+    player.prize += cardGame.prizeCard;
     let displayScore = document.getElementById("scoreGame");
     displayScore.innerHTML = "Your score now is: " + score;
 
     let gameStatus = validateScore(score);
     validateGameStatus(gameStatus, player);
-    console.log("estoy en play game " + gameStatus)
-    return gameStatus
+    localStorage.setItem('activePlayer', JSON.stringify(player));
 }
 
 window.playGame = playGame;
 
 function validateGameStatus(gameStatus, player){
-    let displayMessage = document.getElementById("messageResult");
+
     let buttonDraw = document.getElementById("draw");
 
     switch (gameStatus) {
         case "win":
-            player.prize += prizeUsd;
+            player.prize += prizeGame;
             buttonDraw.setAttribute('disabled', '');
-            displayMessage.innerHTML = "You win congratulations!!!";
+            displayMessage.innerHTML = "&#x1f3c6 You win congratulations!!!" + "  &#x1f4b0 Your Prize is: " + player.prize;
             break;
         case "continue":
             buttonDraw.removeAttribute('disabled');
             break
         case "lose":
             buttonDraw.setAttribute('disabled', '');
-            displayMessage.innerHTML = "We are sorry but you lost.";
+            displayMessage.innerHTML = "We are sorry, but you lost. &#128532";
             break
         default:
             break;
@@ -132,7 +140,7 @@ function drawCardGame(){
 function validateAceDecision(){
     let aceDecisionPlayer;
     do {
-        aceDecisionPlayer = window.prompt("Which value you want for your Ace card?", "1 or 11");
+        aceDecisionPlayer = window.prompt("Yeah you got an ACE! Enter the value selected for the card? 1 or 11", "");
         if(aceDecisionPlayer === '1' || aceDecisionPlayer === '11'){
             return aceDecisionPlayer;
         }
