@@ -1,6 +1,7 @@
 :root{
     --blue: #0A1D83;
-    --green: #427A38;
+    --green: #4d8f41;
+    --red: #ef0e0e;
     --grey: #ebe1e17c;
 }
 
@@ -9,7 +10,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Lora', serif;
-    background-color: rgb(26, 25, 25);
+    background-color: black;
     color: white;
 }
 
@@ -146,11 +147,46 @@ form p{
 }
 
 form .message{
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     margin-top: 20px;
     color: var(--green);
     align-self: center;
+    font-weight: 700;
 }
+
+
+.hide-element{
+    display: none;
+}
+
+.not-found{
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.7rem;
+}
+
+.play-game{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.play-game h3{
+    font-size: 3rem;
+    letter-spacing: 5px;
+    font-weight: bold;
+    color: var(--red);
+    margin-bottom: 20px;
+}
+
+.play-game h4{
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
 
 footer{
     height: 10vh;

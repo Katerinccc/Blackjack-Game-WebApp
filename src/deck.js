@@ -1,4 +1,4 @@
-const Card = require('./card');
+import { Card } from "./card.js";
 
 const cardSuits = ['♠','♥','♣','♦'];
 const cardNames = ['Ace', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'Jack', 'Queen', 'King'];
@@ -57,4 +57,4 @@ function validateCardPrize(cardName){
 
 }
 
-module.exports = CardDeck;
+export {CardDeck};

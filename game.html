@@ -8,10 +8,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./style/style.css">
-    <script src="./src/index.js"></script>
+    <script type="module" src="./src/createGame.js"></script>
     <title>Game</title>
 </head>
-<body onload="createGame()">
+<body onload="mainGame()">
     <header class="header-go-back">
         <figure>
             <a href="./index.htm"><span></span></a>
@@ -19,31 +19,32 @@
         </figure>
     </header>
     <main class="main-form">
-        <form method="POST" action="" class="game-form">
-            <h2>Enter Player DNI to play:</h2>
+        <form method="POST" action="" id="gameForm" autocomplete="off">
+            <h2>Enter Player identification to play:</h2>
             <ul>
                 <li>
-                    <label for="gamerId">ID:</label>
-                    <input type="text" id="gameId" name="gameId" required>
+                    <label for="idPlayer">ID:</label>
+                    <input type="text" id="idPlayer" name="idPlayer" required>
                 </li>
                 <li>
                     <button type="submit" id="submit">PLAY</button>
+                    <button type="reset" id="reset">RESET</button>
                 </li>
-            </ul>
-            <ul class="play-game">
-                <h3>BLACKJACK</h3>
-                <li>
-                    <p>You got the card: </p>
-                    <p>Your score now is:</p>
-                </li>
-                <button>Draw card</button>
-                <button>New Game</button>
-                <p>You win Congratulations!!!</p>
-            </ul>
-            <ul class="not-found">
-                <p>he ID entered is not registered. Please go to Home page to register and come back to play.</p>
             </ul>
         </form>
+        <section class="hide-element" id="play-game">
+            <h3>BLACKJACK</h3>
+            <h4 id="namePlayer"></h4>
+            <p>You got the card: </p>
+            <p>Your score now is:</p>
+            <button>Draw card</button>
+            <button>New Game</button>
+            <p>You win Congratulations!!!</p>
+        </section>
+        <section class="hide-element" id="not-found">
+            <p>The ID entered is not registered.</p>
+            <p>Please go to Home page to register and come back to play.</p>
+        </section>
     </main>
 </body>
 </html>

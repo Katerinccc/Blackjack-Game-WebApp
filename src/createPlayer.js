@@ -31,7 +31,7 @@ function addPlayer(){
 }
 
 function printMessage(playerName){    
-    const message = document.getElementById("message"); 
-    message.innerHTML = "Player " + playerName + " created successfully.";
-    message.className = "message"
+const message = document.getElementById("message"); 
+message.innerHTML = "Player " + playerName + " created successfully.";
+message.className = "message"
 }
